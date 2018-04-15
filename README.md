@@ -1,1 +1,1 @@
-math-auth
+# Math Quiz Auth API
