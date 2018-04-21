@@ -1,0 +1,20 @@
+{
+    "name": "tbart/math-auth",
+    "description": "Auth service for math quiz site",
+    "type": "project",
+    "require": {
+        "slim/slim": "^3.10",
+        "slim/http-cache": "^0.4.0",
+        "tuupola/slim-jwt-auth": "^3.0",
+        "slim/csrf": "^0.8.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.1"
+    },
+    "authors": [
+        {
+            "name": "Tom Bartolucci",
+            "email": "tbartolucci@gmail.com"
+        }
+    ]
+}
