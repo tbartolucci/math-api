@@ -1,5 +1,7 @@
 <?php
-namespace MathAuth\Action;
+namespace Bitsbybit\MathAuth\Action;
+use Aws\CognitoIdentity\CognitoIdentityClient;
+use Bitsbybit\Math\Action\BaseAction;
 use Slim\Http\Request;
 use Slim\Http\Response;
 
@@ -10,15 +12,21 @@ use Slim\Http\Response;
  * Time: 9:43 PM
  */
 
-class Login
+class Login extends BaseAction
 {
+    /**
+     * @var CognitoIdentityClient
+     */
+    private $client;
+
     /**
      * @param Request $request
      * @param Response $response
      * @param array $args
+     * @return Response
      */
     public function login( Request $request, Response $response, array $args): Response
     {
-
+        $this->client = $this->container->get('aws-cognito-client');
     }
 }
