@@ -29,12 +29,17 @@ $container['action-health'] = function($c){
 };
 
 $container['action-login'] = function($c){
-    return new \Bitsbybit\MathAuth\Action\Login($c);
+    $settings = $c->get('settings');
+    return new \Bitsbybit\MathAuth\Action\Login(
+        $c,
+        $c->get('aws-cognito-client'),
+        $settings['cognitoPoolId']
+    );
 };
 
 $container['aws-cognito-client'] = function($c){
     $settings = $c->get('settings');
-    return new \Aws\CognitoIdentity\CognitoIdentityClient([
+    return new \Aws\CognitoIdentityProvider\CognitoIdentityProviderClient([
         'key' => $settings['awsKey'],
         'secret' => $settings['awsSecret'],
         'region'  => $settings['awsRegion']

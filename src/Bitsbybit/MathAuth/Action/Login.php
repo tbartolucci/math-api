@@ -1,7 +1,8 @@
 <?php
 namespace Bitsbybit\MathAuth\Action;
-use Aws\CognitoIdentity\CognitoIdentityClient;
+use Aws\CognitoIdentityProvider\CognitoIdentityProviderClient;
 use Bitsbybit\Math\Action\BaseAction;
+use Slim\Container;
 use Slim\Http\Request;
 use Slim\Http\Response;
 
@@ -15,9 +16,21 @@ use Slim\Http\Response;
 class Login extends BaseAction
 {
     /**
-     * @var CognitoIdentityClient
+     * @var CognitoIdentityProviderClient
      */
     private $client;
+
+    /**
+     * @var string
+     */
+    private $userPoolId;
+
+    public function __construct(Container $c, CognitoIdentityProviderClient $client, $userPoolId)
+    {
+        parent::__construct($c);
+        $this->client = $client;
+        $this->userPoolId = $userPoolId;
+    }
 
     /**
      * @param Request $request
@@ -27,6 +40,15 @@ class Login extends BaseAction
      */
     public function login( Request $request, Response $response, array $args): Response
     {
-        $this->client = $this->container->get('aws-cognito-client');
+
+        $this->client->adminInitiateAuth([
+//            'AuthFlow' => 'USER_PASSWORD_AUTH', // REQUIRED
+//            'AuthParameters' => ['<string>', ...],
+//            'ClientId' => $this->userPoolId, // REQUIRED
+//            'ClientMetadata' => ['<string>', ...],
+//            'UserContextData' => [
+//                'EncodedData' => '<string>',
+//            ],
+        ]);
     }
 }

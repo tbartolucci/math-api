@@ -13,7 +13,8 @@ $settings = [
         'awsRegion' => getenv('aws_region'),
         'awsKey' => getenv('aws_access_key_id'),
         'awsSecret' => getenv('aws_secret_access_key'),
-        'dynamoTable' => getenv('dynamo_table_name')
+        'dynamoTable' => getenv('dynamo_table_name'),
+        'cognitoPoolId' => getenv('cognito_app_client_id')
     ]
 ];
 
