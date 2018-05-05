@@ -2,7 +2,7 @@
 use \Slim\Http\Request as Request;
 use \Slim\Http\Response as Response;
 
-$app->group($baseUrl . '/v1',function(){
+$app->group( '/api/users/v1',function(){
 
     $this->post('/login', function( Request $request, Response $response, array $args){
         $action = new \Bitsbybit\MathAuth\Action\Login($this->getContainer());
