@@ -5,12 +5,12 @@ use Slim\Http\Response;
 
 // Routes
 // Get OpenBalance API ex: http://10.4.32.163:8000/getOpenBalance/899/9159660999
-$app->get( '/api/users/health', function (Request $request, Response $response, $args) {
+$app->get( '/api/auth/health', function (Request $request, Response $response, $args) {
     $action = $this->get('action-health');
     return $action->go($request, $response, $args);
 });
 
-$app->get( '/api/users/up', function (Request $request, Response $response, $args) {
+$app->get( '/api/auth/up', function (Request $request, Response $response, $args) {
     $action = $this->get('action-health');
     return $action->go($request, $response, $args);
 });

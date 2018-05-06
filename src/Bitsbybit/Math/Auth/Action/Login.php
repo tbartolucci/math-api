@@ -1,7 +1,7 @@
 <?php
-namespace Bitsbybit\MathAuth\Action;
+namespace Bitsbybit\Math\Auth\Action;
 use Aws\CognitoIdentityProvider\CognitoIdentityProviderClient;
-use Bitsbybit\Math\Action\BaseAction;
+use Bitsbybit\Math\Common\Action\BaseAction;
 use Slim\Container;
 use Slim\Http\Request;
 use Slim\Http\Response;

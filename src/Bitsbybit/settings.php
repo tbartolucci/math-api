@@ -15,6 +15,7 @@ $settings = [
     ]
 ];
 
-$settings['settings']['auth'] = require __DIR__ . '/MathAuth/settings.php';
+$settings['settings']['auth'] = require __DIR__ . '/Math/Auth/settings.php';
+$settings['settings']['users'] = require __DIR__ . '/Math/Users/settings.php';
 
 return $settings;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Bitsbybit\Math\Action;
+namespace Bitsbybit\Math\Common\Action;
 
 use Slim\Http\Request;
 use Slim\Http\Response;

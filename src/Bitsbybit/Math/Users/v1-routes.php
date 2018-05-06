@@ -4,15 +4,15 @@ use \Slim\Http\Response as Response;
 
 $app->group( '/api/users/v1',function(){
 
-    $this->post('/login', function( Request $request, Response $response, array $args){
-        $action = new \Bitsbybit\MathAuth\Action\Login($this->getContainer());
-        return $action->login($request, $response, $args);
+    // Routes
+    $this->get( '/health', function (Request $request, Response $response, $args) {
+        $action = $this->get('action-health');
+        return $action->go($request, $response, $args);
     });
 
-    $this->get('/{id}/reset-password', function ($request, $response, $args) {
-        // Route for /users/{id:[0-9]+}/reset-password
-        // Reset the password for user identified by $args['id']
-        return $response->withStatus(200);
+    $this->get( '/up', function (Request $request, Response $response, $args) {
+        $action = $this->get('action-health');
+        return $action->go($request, $response, $args);
     });
 
     $this->get('/{id}', function(Request $request, Response $response, array $args){
