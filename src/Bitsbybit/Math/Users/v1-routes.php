@@ -6,12 +6,12 @@ $app->group( '/api/users/v1',function(){
 
     // Routes
     $this->get( '/health', function (Request $request, Response $response, $args) {
-        $action = $this->get('action-health');
+        $action = $this->get('users-action-health');
         return $action->go($request, $response, $args);
     });
 
     $this->get( '/up', function (Request $request, Response $response, $args) {
-        $action = $this->get('action-health');
+        $action = $this->get('users-action-health');
         return $action->go($request, $response, $args);
     });
 
